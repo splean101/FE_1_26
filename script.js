@@ -60,10 +60,9 @@ function User(name, age) {
 
 const user_1 = new User('Mike', 18);
 
-const user_2 = Object.create(user_1);
-user_2.name = 'Bob';
-user_2.age = 25;
+const user_2 = new user_1.constructor('Bob', 25);
 
+console.log(user_1);
 console.log(user_2);
 
 //4.
@@ -79,9 +78,8 @@ function UserType(name) {
         value: i + 1,
       });
     }
-  };
+  }
   this.join = Array.prototype.join;
-
 }
 
 const admins = new UserType(['Mike', 'Bob', 'Nikola']);
